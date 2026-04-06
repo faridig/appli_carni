@@ -6,7 +6,7 @@ export default function Home() {
           CarniApp - En attente de viande
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400">
-          L'application est prête à rugir.
+          L&apos;application est prête à rugir.
         </p>
       </main>
     </div>
