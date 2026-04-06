@@ -30,9 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# opencode & rtk
+# opencode, rtk & docs
 .opencode/
 openrtk/
+docs/
 .env*
 ! .env.example
 
