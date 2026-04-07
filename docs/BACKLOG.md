@@ -24,9 +24,15 @@
 
 ## 📋 BACKLOG PRIORISÉ
 
-### [PBI-000] SPRINT 0 : Walking Skeleton (Infra & DevOps)
+### [PBI-000] SPRINT 0 : Walking Skeleton (Infra & DevOps) [DONE]
 - **Priorité** : Haute | **Estimation** : S
 - **Objectif** : Initialiser l'environnement pour le Lead Dev.
+
+### [PBI-000-FIX] Nettoyage Git et `.gitignore` [NEW]
+- **Priorité** : Urgente | **Estimation** : XS
+- **Objectif** : Retirer les dossiers `.opencode/` et `openrtk/` (et leurs node_modules) de l'index Git.
+- **Description** : Mettre à jour le `.gitignore` racine pour ignorer les dossiers en entier et purger le cache Git (`git rm -r --cached`).
+- **DoD** : Les dossiers n'apparaissent plus dans `git status` et sont physiquement absents du repo distant (Github).
 
 ### [PBI-001] Gestion des Utilisateurs & Rôles
 - **Priorité** : Haute | **Estimation** : M
