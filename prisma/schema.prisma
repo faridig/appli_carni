@@ -21,7 +21,41 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Authenticator Authenticator[]
+  animals       Animal[]
+  reservations  Reservation[]
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum AnimalStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+}
+
+model Animal {
+  id              String       @id @default(cuid())
+  species         String       // Boeuf, Veau
+  breed           String       // Charolaise, Limousine, etc.
+  age             Int          // en mois
+  estimatedWeight Float        // en kg
+  status          AnimalStatus @default(AVAILABLE)
+  ownerId         String
+  owner           User         @relation(fields: [ownerId], references: [id])
+  totalParts      Int?         // Fixé lors de la 1ère réservation (ex: 4 pour 1/4)
+  reservations    Reservation[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Reservation {
+  id        String   @id @default(cuid())
+  animalId  String
+  animal    Animal   @relation(fields: [animalId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  status    String   @default("PENDING")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
