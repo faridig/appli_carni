@@ -31,9 +31,8 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # opencode & rtk dependencies
-.opencode/node_modules/
-openrtk/node_modules/
-openrtk/dist/
+.opencode/
+openrtk/
 .env*
 ! .env.example
 
