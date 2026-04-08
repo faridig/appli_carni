@@ -1,4 +1,4 @@
-import NextAuth, { DefaultSession } from "next-auth"
+import { DefaultSession } from "next-auth"
 
 export type UserRole = "CLIENT" | "ELEVAGE_TEST"
 
@@ -11,6 +11,14 @@ declare module "next-auth" {
   }
 
   interface User {
+    id?: string
+    role?: UserRole
+  }
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    id: string
     role?: UserRole
   }
 }

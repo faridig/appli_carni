@@ -1,26 +1,30 @@
 import NextAuth from "next-auth"
-import Google from "next-auth/providers/google"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/lib/prisma"
+import { authConfig } from "./auth.config"
+import { UserRole } from "./types/next-auth"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [
-    Google({
-      clientId: process.env.AUTH_GOOGLE_ID,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET,
-    }),
-  ],
+  session: { 
+    strategy: "jwt", // Recommended for Edge compatibility with middleware
+  },
+  ...authConfig,
   callbacks: {
-    async session({ session, user }) {
+    ...authConfig.callbacks,
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id
+        token.role = user.role
+      }
+      return token
+    },
+    async session({ session, token }) {
       if (session.user) {
-        session.user.id = user.id
-        session.user.role = (user as any).role
+        session.user.id = token.id as string
+        session.user.role = token.role as UserRole
       }
       return session
     },
-  },
-  session: {
-    strategy: "database", // Default when using adapter, keeps role up to date
   },
 })

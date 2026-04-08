@@ -16,7 +16,7 @@ export default async function Dashboard() {
           </pre>
         </div>
       ) : (
-        <p>Vous n'êtes pas connecté.</p>
+        <p>Vous n&apos;êtes pas connecté.</p>
       )}
     </div>
   )
