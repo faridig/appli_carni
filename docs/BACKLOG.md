@@ -36,11 +36,11 @@
 - **Priorité** : Haute | **Estimation** : M
 - **Description** : Inscription/Connexion avec distinction entre "Éleveur" et "Client".
 
-### [PBI-002] Interface Éleveur : Création d'une Bête
+### [PBI-002] Interface Éleveur : Création d'une Bête [DONE]
 - **Priorité** : Haute | **Estimation** : M
 - **Description** : Formulaire simple (Âge, Race, Poids estimé carcasse, Type: Boeuf/Veau).
 
-### [PBI-003A] Partage Dynamique : Moteur de Calcul (API)
+### [PBI-003A] Partage Dynamique : Moteur de Calcul (API) [DONE]
 - **Priorité** : Haute | **Estimation** : M
 - **Description** : Logique backend de division de la carcasse et gestion des places disponibles (ex: 4 parts pour 1 veau).
 
