@@ -40,9 +40,13 @@
 - **Priorité** : Haute | **Estimation** : M
 - **Description** : Formulaire simple (Âge, Race, Poids estimé carcasse, Type: Boeuf/Veau).
 
-### [PBI-003] Système de Partage Dynamique
-- **Priorité** : Haute | **Estimation** : L
-- **Description** : Logique où le 1er arrivant fixe le nombre de parts (ex: 4 pour un veau). Les suivants rejoignent le groupe.
+### [PBI-003A] Partage Dynamique : Moteur de Calcul (API)
+- **Priorité** : Haute | **Estimation** : M
+- **Description** : Logique backend de division de la carcasse et gestion des places disponibles (ex: 4 parts pour 1 veau).
+
+### [PBI-003B] Partage Dynamique : Interface de Réservation
+- **Priorité** : Haute | **Estimation** : M
+- **Description** : UI client pour rejoindre un groupe de partage existant ou en créer un.
 
 ### [PBI-004] Paiement de l'Acompte (Stripe)
 - **Priorité** : Haute | **Estimation** : M
