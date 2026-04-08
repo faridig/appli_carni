@@ -4,7 +4,6 @@ import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { AnimalSchema } from "@/lib/validations/animal";
 import { revalidatePath } from "next/cache";
-import { UserRole } from "@/types/next-auth";
 
 export type FormState = {
   errors?: {
